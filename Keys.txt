@@ -1,0 +1,25 @@
+Surrogate keys:
+- meaningless, sequential, generated in the data warehouse
+- up to the date extraction logic to generate these keys either in the staging area or in the DWH
+- kept independent from production keys
+- simple integers starting from one to the highest number added
+- IDs and primary keys in the DWH dimensions
+- Not natural keys (not even natural keys glued together)
+- Not smart keys
+- Generated on insertion
+- tight integer keys might help unclutter the database and improve join performance, when being used to replace big ugly composite/natural keys
+- provides protection from the changes in the source systems;
+- provide improved query and 
+Business keys: primary keys in the source normalized Database
+Facts have composite primary keys consisting of a set of foreign keys from the dimensions it has relations with;
+
+SURROGATE KEYS IN THE FACT TABLE
+- generally not a reliable or logical idea
+- might be helpful and it might make sense in certain specific situations:
+	- when an organization's rules legitimately allow for multiple records to have the same composite  primary keys;
+	normally, you would try your best to avoid that, by finding some unique timestamps for eg in the source db to be able to
+	assign some uniqueness for each record. If it is not possible, then you can resort to using a surrogate key.
+	- in the case of certain ETL techniques for loading new data inside the system, new and old rows with the same PK's
+	 might exist at the same time during the process, making it necessary to have surrogate keys. This happens when adding all the new rows first and then deleting the old ones. This helps improve auditing, load performance and recovery capability.
+	- another requirement in ETL  would be determine when a load job was suspended, either to resume loading or back put the job entirely. A sequentially assigned surrogate key makes this task straight forward.
+	

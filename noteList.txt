@@ -1,0 +1,16 @@
+Dimensional design	[ x ]
+Enterprise bus and conformed dimensions [ x ]
+Difference between designing transactional systems and dw [ x ]
+Design and impl for ETL [ x ]
+Data Quality dimensions and issues [x]
+Bridge tables [x]
+Junk Dimensions [x]
+Keys [x]
+S-O-R [x]
+Testing in DWH [x]
+Handling Change [x]
+Cognitive Bias (Visual Analytics) [ ] - to do last add to SOR
+Preattentive attributes (Visual Analytics) [x]
+Designing Dashboards (15 principles) [x] - added to SOR
++Examples for all based on hand-ins
+

@@ -1,0 +1,73 @@
+Stimulus Organism Reaction (SOR Model)
+STIMULUS:
+- Stimulus refers to how our human senses are stimulated in order to attract our attention
+- Biases can be generally used to mislead us in terms of how we perceive the information and how our attention is grabbed.
+- The way the same data can be visualised in multiple ways can induce different sensations, hence the stimuli are different
+
+ORGANISM:
+- When designing for a dashboard, we need to grab the short-term memory of a person through the sensory input, so we have around 7 seconds to do so;
+- We need to help encode some of this memory that might be relevant, into the person's long-term memory.
+- This can be done through rehearsal, which means it might not necesarrily be our job.
+- This is done through grabbing a person's attention.
+ 
+
+REACTION/RESPONSE:
+- when a reaction of any kind takes place, the audience managed to get their attention grabbed.
+
+
+
+
+QUANTITATIVE INFORMATION - Central Tendencies
+- Mean: sum of all values / no of all values
+- Mode: most frequently occuring value in a set
+- Midrange: (highest+lowest)/2 
+- Median: middle value from the sorted array of values
+
+QUANTITATIVE INFORMATION - Variations
+- Spread: Highest value - lowest value
+- Standard Deviation:
+	- working out the average
+	- for each number subtract the mean and square the result
+	- work out the mean of these values
+	- take the square root of it and voila!
+
+Preattentive attributes:
+- color (hue, intensity, highlighting)
+- spatial position (grouping, 2D, 3D positioning)
+- form (length, width, size, orientation, curvature, shape)
+- motion (induced direction of motion, shadowing, motion blur)
+
+Best value encoding objects:
+- Points
+- Lines
+- Bars
+- Boxes
+
+8 types of relationships between data points:
+- Nominal Comparison;
+- Time Series;
+- Ranking;
+- Part-to-whole
+- Deviation
+- Distribution
+- Correlation
+- Geospatial
+
+15 principles of Dashboard Design:
+- Design for a target;
+- Keep everything at a glance;
+- Keep it simple;
+- Align elements;
+- Be consistent;
+- Highlight the most relevant information;
+- Be clear;
+- Start from zero;
+- Shorten the numbers;
+- Show the context;
+- Choose the right colors;
+- Design dashboards, not reports;
+- Show variations;
+- Leave background noise off;
+- Pick the right chart;
+
+	

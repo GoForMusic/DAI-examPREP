@@ -1,0 +1,29 @@
+Recommended steps to take when testing:
+
+1. Creating a small static test database, based on real data
+	- it is preferably small, in order for the tests to run quickly;
+	- static so that the expected set of results can be determined beforehand;
+	- derived from real data to be as close as possible to the real thing;
+2. Test early and often
+	- every time a line of code is added, TEST;
+	- running daily test is a healthy way of ensuring correctness in the database;
+	- unit testing should be done quite often and kept track of;
+	- system tests (integration tests) should be done early on, to make sure all the quirks are taken care of, before going into the actual testing phase (and in order for it to be shorter and less prone to staying in QA hell)
+3. Use testing tools and automate the testing environment
+ - use tools for automation;
+ - devs don't have time to babysit unit tests;
+ - for unit testing and data quality testing, define tests to run a query in the source and target data warehouse
+ - set up the test environment before testing ( restoring a VM environment with clean data, modifying test data with static rows to test unusual conditions,  run your ETL program)
+ -  after the tests, drop your environment ( as it will be freshly recreated after from the beginning)
+ - group tests together in order to avoid running your ETL code for each unit test
+
+4. Enlist the business users to define system tests
+ - this is the best way of knowing if the tests are relevant for the business users' needs
+ - engaging the users in the QA phase provides a huge credibility boost
+
+5. The test environment needs to replicate the production one pretty closely
+  What should match up:
+	- drive configuration
+	- software versions from the OS to the DB versions
+	- server layout
+	- security roles and privileges

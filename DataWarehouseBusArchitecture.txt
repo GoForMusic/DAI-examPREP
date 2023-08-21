@@ -1,0 +1,63 @@
+It is an incremented, architectural approach to building one enterprise's data warehouse.
+
+* Bus is an old term stemming from electrical engineering, that is now common in computer science.
+* Common structure/interface to which many things connect
+
+With a standard bus architecture interface, it makes it easy to implement business process by different groups at different times. If they ad here to one standard, it will be incrementally easier to plug them all together and make them coexist.
+
+All the processes will ultimately create a family of dimensional models that share a common set of conformed dimensions.
+
+THE BUS ARCHITECTURE 
+
+- provides a rational approach to breaking down a data warehouse's planning task.
+- during the architecture phase, a master suite of standardized dimensions and facts that are designed, which would have the same meaning accross the enterprise, this being the architectural framework.
+- based on this framework, business process are separately implemented and then fit together as a puzzle, given that they are based on  the same standard.
+- independent of the database platform and other technologies;  decoupled from the rest of the system;
+- all types of databases can fit together, if given the same conformed dimensions;
+
+
+DATA WAREHOUSE BUS MATRIX
+-the tool used to create, document and communicate the bus architecture.
+-business processes as rows
+-dimensions as columns
+-matrix rows translate into business process, based on the organization's primary activites;
+-matrix columns represent common dimensions
+-makes it easy to identify dimensions that warrant attention, namely those that appear in multiple business process.
+
+
+
+The process begins by listing first-level business process, derived from a single primary source system;
+Then once these are identified, optionally multisource  business process can be listed, referred to as conformed business process.
+
+CONFORMED DATA MARTS or business process
+- marginally harder to implement as the ETL process grows alarmingly with each additional source added to a single dimensional model.
+- profitability could be an example, as it encapsulate multiple data marts to be corellated with each other, in order to provide a complete view of the organization's profitability.
+- multisource data marts
+
+CONFORMED DIMENSIONS
+- identical or strict mathematical subsets of the most granular, detailed dimension;
+- have consistent dimension keys;
+- consistent attribute column names;
+- consistent attribute definitions;
+- consistent attribute values (consistent report labels and groupings);
+- dimension tables are not conformed if the attributes are labeled differently or contain different values;
+- data marts can thus not be used together if their dimensions are not conformed;
+- they are defined naturally at the most granular level possible;
+- sometimes they might be needed at a rolled-up granular level, for example if fact tables represent aggregated facts associated with aggregated dimensions (weekly inventory snapshot, in addition to a daily one);
+- will be replicated either logically or physically throughout the enterprise, however they should be built once during the staging phase;
+- the responsibility for each conformed dimension is vested in a group called the dimension authority;
+
+THE DIMENSION AUTHORITY
+- has responsibility for defining, maintaining and publishing a particular dimension to all data marts clients who might need it;
+- defines the gold standard dimension data;
+- may involve sourcing from multiple operational systems;
+
+CONFORMED FACTS
+- 10 percent of the architectural effort;
+- fact table data is not replicated in multiple data marts;
+- if facts live in multiple data marts, the underlying calculations and equations must be the same accross the enterprise (same labels, same units of measurement, same definition in a dimensional context);
+- if it is impossible to conform fact tables, then they should have different names for different interpretations;
+- if a fact appears in multiple units of measures in multiple fact tables, they need to be carried in both units of measurement, in order to make it easy to drill accross;
+
+
+

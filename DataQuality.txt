@@ -1,0 +1,52 @@
+Data quality is a multi-dimensional concept. Organizations have to take both individual perceptions of the end user into consideration, as well as the objective measurements based on the data in question.
+
+Subjective assesments can be done, for example, by asking end-users to answer surveys.
+
+Objective assesments can be:
+- task dependent
+- task independent 
+
+TASK INDEPENDENT metrics reflect states of data without contextual knowledge of the business process or the application in itself and can be applied to any data set.
+
+TASK DEPENDENT metrics , which include the organization's business rules, regulations and constraints provided by the database administrator, are developed in specific apllication contexts.
+
+DATA QUALITY DIMENSIONS
+
+Accesibility -	the extent to which data is available and accesible to retrieval
+Appropiate Amount of Data - the extent to which the quantity of data satisfies the business needs of the task at hand
+Believability - the extent to which data is regarded as credible
+Completeness - the extent to which data is not missing and is sufficiently broad for the task at hand
+Concise Representation - the extent to which data is concisely represented 
+Consistent Representation - the extent to which data respects the same format accross the organization
+Ease of Manipulation - the extent to which data is easily maleable and appliable to the task
+Free-Of-Error -  the extent to which data is correct and reliable
+Interpretability - the extent to which data can be easily understandable, is in the appropriate language, format, unit of measurement
+Objectivity -  the extent to which data is unbiased, unprejudiced and impartial
+Relevancy -  the extent to which data is relevant and applicable to the task at hand
+Reputation - the extent to which data is highly regarded in terms of its content 
+Security -  the extent to which data is securely stored and accesible only to authorized users
+Timeliness - the extent to which data is up to date for the task at hand
+Understandability - the extent to which data is easy to comprehend
+Value-Added -  the extent to which data is valuable and provides advantages from its use
+
+
+DATA QUALITY ASSESMENT IN PRACTICE
+
+1. Asses Data (subjective/objective assesment)
+2. Identify Issues (data entry issue/ source system issue) - ? might not be solvable from the scope of a data warehouse engineer for eg.
+3. Determine cause of action - choose a strategy
+
+Four strategies:
+1. Do nothing
+2. Fix the source
+3. Fix in data warehouse
+4. Flag wrong/inconsistent data
+
+Kimbal recommendation:
+- Change processes
+- Improve data entry environment 
+- Improve integration
+- Commit to high data quality culture
+- Measure data quality (subjectively/objectively)
+- Raise awareness
+- Cooperation 

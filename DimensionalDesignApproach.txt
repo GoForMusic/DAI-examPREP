@@ -1,0 +1,64 @@
+The users of a normal operational system deal with one row at a time, basically 'turning the wheel of the organization', performing the same operational tasks over and over.
+The users of a data warehouse system deal with thousands of rows at a time in order to ask their questions, whilst the problems they solve/questions they answer are almost always changing.
+
+A data warehouse has to:
+- make data accesible to the users;
+- maintain and present consistent data;
+- be resilient and adaptive to change;
+- serve as the foundation for decision making;
+- be accepted and adopted  by the business community (it has to bring value to the business model);
+
+Data Warehouse Components:
+- operational source system - outside the DW (main resps. are availability and performance, for queries to be transactionally performed on it);
+- data staging area - storage area and set of processes known as ETL (extracting the data from the source system into the staging area; cleansing, selecting, improving data quality in the transformation phase; loading into the data presentation area at the end;
+- data presentation area - organized, stored, readily available for end users (skilled proffesionals); has to be mandatorily structured using the  dimensional model, as the industry concluded that is the best way to serve data to data warehouse end users;
+- data access tools - used to query and analyze the data in some manner (can range from ad hoc query tools, to modelling and data visualization applications);
+
+ 3NF- Normalized models
+-removing data redundancies;
+-data stored as entities in relational tables;
+-reffered to as ER Models;
+-ERD's used to represent it;
+-very useful in operational systems as transactions(CRUD operations) in the system have to touch the database in one place;
+- very complex and inefficient if used for data warehouse to its lower degree of understandability;
+ 
+Dimensional Models:
+- can also be represented with ERDs(entity relationship digram), but has a different degree of normalization;
+- high performance and intuitive retrieval of data;
+- design goals are understandability, query performance, resilience to change;
+- must contain detailed, atomic data, at the lowest granularity, depending on the chosen business process;
+- business process, conforming to the bus architecture;
+- contains one or more fact tables, accompanied by a few dimensions each;
+- if the design is done correctly, some fact tables will share dimensions;
+- if presentationa area is  based on a relational database, the models are called star schemas;
+- if based on  multidimensional dbs or OLAPS , data is stored in so-called cubes;
+
+Fact Table:
+- primary table in a dimensional model, where numerical performance is stored;
+- facts have to be numeric and additive;
+- two or more foreign keys (from dimensions);
+- all tables that express a many-to-many relationship have to be fact tables, the rest are dimensions;
+- these relationships are between the dimensions;
+
+Dimensional Tables:
+- companions to the fact table;
+- tend to be relatively shallow in terms of rows;
+- can include many columns;
+- it is common for them to have 50-100 attributes;
+- serve as the primary source for query constraints;
+- the data warehouse is only as good as the attributes in the dimensions;
+- entry points into the fact tables;
+-  the more robust they are, their capabilities for analytical slicing and dicing increase;
+
+IMPORTANT:
+If an extracted field from the source is a measurement that takes lots of values and participates in calculations, then it is a FACT.
+If an extracted field is a discretely valued description that is more or less constant and participates in constraints, then it is part of a DIMENSION.
+
+
+DIMENSIONAL DESIGN STEPS:
+1. Select the business process to model;
+2. Declare the grain ( what does each fact table row represent);
+3. Choose the dimensions that apply to each row;
+4. Identify the numeric facts that will populate each fact table row;
+ 
+

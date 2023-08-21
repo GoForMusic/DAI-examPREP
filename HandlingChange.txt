@@ -1,0 +1,45 @@
+Reasons to change:
+- Keeping track of history;
+- Slicing and dicing facts across changes;
+Slowly changing dimensions
+- dimensions change over time in the real world;
+- we need to be able to accomodate these slowly changing dimensions over time;
+- tracking history and change is utmostly necessary;
+- it is unacceptable to put everything in the fact table or make every dimension time-dependent;
+- the latter would mean going into a full-blown normalized structure;
+- we take advantage of the fact that dimensions are constant over time;
+- we only make minor adjustements to contend with the changes;
+- we call these constant dimensions slowly changing dimensions (SCDs)
+
+The three types of change (dimension data):
+Type 1 (overwriting)
+- same as in a transcational environment
+- disadvantage of losing history
+- used for error correction
+- the attribute reflects the newest measurement/ most recent assignment
+- fast and easy
+- fact table left untouched
+
+Type 2 (new dimension entry)
+- preserves history
+- is the preferred option
+- adds a new row into the dimension
+- even if the natural key is the same, the surrogate key will change on the new entry (that's why surrogate keys are a
+ brilliant idea)
+- the new row automatically partitions history in the fact table;
+- perfectly segments the fact table history prechange 
+- we can track as many changes as required
+- with the type 2 response, we create a new
+dimension row with a new single-column primary key to uniquely identify the
+new product profile. This single-column primary key establishes the linkage
+between the fact and dimension tables for a given set of product characteris-
+tics.
+- one downisde would be accelerated dimension table growth
+- it does not allow association between new entries and old fact history (type 3 solves this);
+- valid to and valid from columns can be added to be able to query a valid value in a time span;
+Type 3 (maintain both old and new values, add a new dimension column)
+- add a new column representing the old value (such as in a prior department for eg when having employees)
+- necessary when there is a business need to support two views of the world simultaneously;
+- it is barely used, only when the process requires this data to be kept;
+- as opposed to a type 2 change, both current and prior values can be regarded as true;
+

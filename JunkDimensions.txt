@@ -1,0 +1,21 @@
+Defined as a collection of attributes that have only a few distinct values
+Low cardinality
+Creation:
+1. Cross joining source tables to get possible value combinations (how to update?)
+2. Manually inputting values (how to update with new stuff?)
+
+Incorporating into the fact table to look up the surrogate key.
+
+Reasons: 
+- reducing the size of the fact table
+- make the dimensional model easier to work with
+
+STEPS:
+1. Building the Initial Junk Dimension
+	Cross joining the source tables if it wouldn't yield too many rows
+	Cross joining based on actual combinations in the fact table, yielding only existing combinations, making it significantly smaller in scale
+2. Incorporating the Junk Dimension into the Fact Row Process
+	Once set in place, it will be used to look up the surrogate key that corresponds to the combination of attributes found in each fact table source row
+3. Maintaining the Junk Dimension
+	Checking for new combinations of attributes every time the dimension is loaded.
+
